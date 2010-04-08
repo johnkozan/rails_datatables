@@ -12,7 +12,8 @@ module RailsDatatables
     auto_width = opts[:auto_width].present? ? opts[:auto_width].to_s : "true"
     row_callback = opts[:row_callback] || nil
     paginate = opts[:paginate].present? ? opts[:paginate].to_s : "true"
-
+    info = opts[:info].present? ? opts[:info].to_s : "true"
+    
     append = opts[:append] || nil
 
     ajax_source = opts[:ajax_source] || nil
@@ -35,6 +36,7 @@ module RailsDatatables
           },
           "bPaginate": #{paginate},
           #{"'sPaginationType': 'full_numbers'," if paginate == "true"}
+          "bInfo": #{info},
           "iDisplayLength": #{per_page},
           "bProcessing": true,
           "bServerSide": #{server_side},
