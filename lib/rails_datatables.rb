@@ -11,7 +11,7 @@ module RailsDatatables
     no_records_message = opts[:no_records_message] || nil
     auto_width = opts[:auto_width].present? ? opts[:auto_width].to_s : "true"
     row_callback = opts[:row_callback] || nil
-    paginate = opts[:paginate].present? ? opts[:pagintate].to_s : "true"
+    paginate = opts[:paginate].present? ? opts[:paginate].to_s : "true"
 
     append = opts[:append] || nil
 
@@ -34,7 +34,7 @@ module RailsDatatables
             "sProcessing": '#{processing}'
           },
           "bPaginate": #{paginate},
-          "sPaginationType": "full_numbers",
+          #{"'sPaginationType': 'full_numbers'," if paginate == "true"}
           "iDisplayLength": #{per_page},
           "bProcessing": true,
           "bServerSide": #{server_side},
